@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./assets/styles/styleContact.css">
+    <link rel="stylesheet" href="./assets/styles/imagehover.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/hover.css">
+    <link rel="stylesheet" href="./assets/styles/hover-min.css">
+    <link rel="stylesheet" href="./assets/styles/btnStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <title>Home - Franco Petshop</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <!-- MENU MOBILE -->
+            <div id="menu-mobile">
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
+                    aria-controls="offcanvasResponsive"><i class="fa-solid fa-bars"></i></button>
+
+                <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasResponsive"
+                    aria-labelledby="offcanvasResponsiveLabel">
+                    <div class="offcanvas-header">
+                        <div id="offcanvasResponsiveLabel">MENU</div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul>
+                            <li>
+                                <a href="#">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="juguetes.html">Juguetes</a>
+                            </li>
+                            <li>
+                                <a href="farmacia.html">Farmacia</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Nosotros</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MENU DESKTOP -->
+            <div id="menu-desktop">
+                <div data-aos="zoom-in-right" class="box-brand">
+                    <div class="box-logo">
+                        <img src="/assets/img/logo_franco(transparente).png" alt="logo_franco" id="logo">
+                    </div>
+                    <div class="box-titulo">
+                        <a href="index.html">Franco Petshop</a>
+                    </div>
+                </div>
+                <div data-aos="zoom-in-left" class="box-navbar">
+                    <div class="box-nav">
+                        <nav>
+                            <a href="#" class="hvr-grow">Inicio</a>
+                            <a href="juguetes.html" class="hvr-grow">Juguetes</a>
+                            <a href="farmacia.html" class="hvr-grow">Farmacia</a>
+                            <a href="about.html" class="hvr-grow">Nosotros</a>
+                            <a href="contact.html" class="hvr-grow">Contacto</a>
+                        </nav>
+                    </div>
+                    <div class="box-btn-carrito">
+                        <a href="resumen.html" id="btn-carrito">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>Carrito({{cantidadArticulosCarrito}})</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <main data-aos="fade-up" data-aos-duration="3000">
+            <div class="box-cabecera">
+                <div class="cabecera-main">
+                    <h2>Bienvenido a la tienda de tu mascota</h2>
+                </div>
+            </div>
+
+            <div id="texto-afterend-cabecera">
+                <p>Trabajamos con las <span>mejores marcas</span></p>
+            </div>
+
+            <div data-aos="fade-up" class="marquee">
+                <ul class="marquee-content">
+                    <li><img src="/assets/img/logos/dogchow-logo.png" alt=""></li>
+                    <li><img src="/assets/img/logos/Logo-Pro-Plan.jpg" alt=""></li>
+                    <li><img src="/assets/img/logos/pedigree-logo.png" alt=""></i></li>
+                    <li><img src="/assets/img/logos/purina-dogui-logo.png" alt=""></i></li>
+                    <li><img src="/assets/img/logos/Whole-Earth_logo.png" alt=""></li>
+                    <li><img src="/assets/img/logos/excellent-logo.png" alt=""></li>
+                </ul>
+            </div>
+
+            <div class="img-container">
+                <img src="/assets/img/imgM/3.jpg" alt="">
+            </div>
+
+            <div class="card-container">
+                {{cantidadArticulosargados}} {{cambiarTexto}}{{calcularPrecioTotal}}
+                <div v-else v-for="oferta in menosStock" class="card-box">
+                    <div class="card hvr-grow">
+                        <div class="box-stock">
+                            <p>Solo quedan {{oferta.stock}} en stock</p>
+                        </div>
+                        <figure class="imghvr-fade">
+                            <img :src="oferta.imagen" class="card-img-top" :alt="oferta.nombre">
+                            <figcaption>
+                                <p class="ih-zoom-in ih-delay-md">
+                                    <i>{{oferta.descripcion}}</i>
+                                </p>
+                            </figcaption>
+                            <a @click=mostrarDetalle(oferta) href="./details.html"></a>
+                        </figure>
+                        <div class="card-body">
+                            <h3 class="card-title">{{oferta.nombre}}</h3>
+                            <p class="card-text">{{oferta.precio}}$</p>
+                            <div class="card-footer">
+                                <a class="button-19" @click=prueba(oferta)>{{oferta.textBoton}}</a>
+                                <div class="contador">
+                                    <button @click=restarBotonSinArray(oferta,menosStock) class="button-26"><i
+                                            class="fa-solid fa-minus"></i></button>
+                                    <input type="number" v-model="oferta.vmodel" min="1" class="display-contador"
+                                        style="width: 50px;">
+                                    <button @click=sumarBotonSinArray(oferta,menosStock) class="button-26"><i
+                                            class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" class="slicer1">
+                <div class="envios">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <p>Envíos gratis a todo el país</p>
+                    <span class="subtexto">A partir de compras de 5.000$</span>
+                </div>
+                <div class="tiempo">
+                    <i class="fa-solid fa-store"></i>
+                    <p>Retiros en nuestras sucursales</p>
+                    <span class="subtexto">De lunes a viernes, de 8:00hs a 20:00hs</span>
+                </div>
+                <div class="promo-bancos">
+                    <p>Promociones bancarias</p>
+                    <div class="bancos-logos">
+                        <img href="#" src="/assets/mastercard.jpg" alt="">
+                        <img src="/assets/Visa_logo.png" alt="">
+                        <img src="/assets/american-express.png" alt="">
+                        <img src="/assets/mercadopago-logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id="ubicacion">
+                <div class="info-ubi">
+                    <h3>Visitanos</h3>
+                    <p class="p-h1">Horarios de atención</p>
+                    <p class="p-h2">Lunes a viernes</p>
+                    <p class="p-h2">8:00hs a 20:00hs</p>
+                    <p class="p-h1">Dirección</p>
+                    <p class="p-h2">Calle Rio Janeiro 600, CABA, Argentina</p>
+                </div>
+                <div id="mapa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11238.203412423063!2d-58.43490134874688!3d-34.610753099899156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca68f434b9df%3A0xea8ad340a476cdfe!2sR%C3%ADo%20de%20Janeiro%20600%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1657486879144!5m2!1ses-419!2sar"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="slicer2">
+                <p>No te pierdas de nuestras ofertas</p>
+                <div id="newsletter">
+                    <label for="">¡Suscribite a nuestro newsletter!</label>
+                    <input type="text" placeholder="Email">
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="box-mas">
+                <div class="box-productos">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Ofertas</a>
+                        </li>
+                        <li>
+                            <a href="#">Novedades</a>
+                        </li>
+                        <li>
+                            <a href="#">Los mas vendidos</a>
+                        </li>
+                    </ul>
+                    <div class="box-redes">
+                        <h3>Nuestras redes</h3>
+                        <div class="box-redes-links">
+                            <a href="https://facebook.com">
+                                <i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://instagram.com">
+                                <i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://youtube.com">
+                                <i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-empresa">
+                    <h3>Nuestra empresa</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Envios</a>
+                        </li>
+                        <li>
+                            <a href="#">Terminos y condiciones</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacte con nosotros</a>
+                        </li>
+                        <li>
+                            <a href="#">Mapa del sito</a>
+                        </li>
+                        <li>
+                            <a href="#">Tiendas</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="medios-pagos">
+                    <div class="title-medios-pagos">
+                        <h3>Medios de pagos</h3>
+                    </div>
+                    <div class="img-medios-pagos">
+                        <img href="#" src="/assets/mastercard.jpg" alt="">
+                        <img src="/assets/Visa_logo.png" alt="">
+                        <img src="/assets/american-express.png" alt="">
+                        <img src="/assets/mercadopago-logo.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+            <div class="box-desarrollo">
+                <p>© 2022 - Software Ecommerce desarrollado por CarpinchoIT™</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/497ab6b7a7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 400
+        });
+    </script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="/assets/javascript/vue.js"></script>
+    <script src="/assets/javascript/main.js"></script>
+
+
+    <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+        class="float" target="_blank">
+        <div id="box-wpp">
+            <i id="icon-wpp" class="fa fa-whatsapp my-float"></i>
+        </div>
+    </a>
+</body>
+
+</html>

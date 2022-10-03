@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="/assets/styles/styleContact.css">
+    <link rel="stylesheet" href="/assets/styles/imagehover.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/hover.css">
+    <link rel="stylesheet" href="/assets/styles/hover-min.css">
+    <link rel="stylesheet" href="/assets/styles/btnStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <title>Nosotros - Franco Petshop</title>
+</head>
+
+<body>
+    <div id="app">
+        {{cantidadArticulosargados}}
+        {{cambiarTexto}}
+        {{calcularPrecioTotal}}
+        <header>
+            <!-- MENU MOBILE -->
+            <div id="menu-mobile">
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
+                    aria-controls="offcanvasResponsive"><i class="fa-solid fa-bars"></i></button>
+
+                <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasResponsive"
+                    aria-labelledby="offcanvasResponsiveLabel">
+                    <div class="offcanvas-header">
+                        <div id="offcanvasResponsiveLabel">MENU</div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul>
+                            <li>
+                                <a href="index.html">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="juguetes.html">Juguetes</a>
+                            </li>
+                            <li>
+                                <a href="farmacia.html">Farmacia</a>
+                            </li>
+                            <li>
+                                <a href="#">Nosotros</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MENU DESKTOP -->
+            <div id="menu-desktop">
+                <div data-aos="zoom-in-right" class="box-brand">
+                    <div class="box-logo">
+                        <img src="/assets/img/logo_franco(transparente).png" alt="logo_franco" id="logo">
+                    </div>
+                    <div class="box-titulo">
+                        <a href="index.html">Franco Petshop</a>
+                    </div>
+                </div>
+                <div data-aos="zoom-in-left" class="box-navbar">
+                    <div class="box-nav">
+                        <nav>
+                            <a href="index.html" class="hvr-grow">Inicio</a>
+                            <a href="juguetes.html" class="hvr-grow">Juguetes</a>
+                            <a href="farmacia.html" class="hvr-grow">Farmacia</a>
+                            <a href="#" class="hvr-grow">Nosotros</a>
+                            <a href="contact.html" class="hvr-grow">Contacto</a>
+                        </nav>
+                    </div>
+                    <div class="box-btn-carrito">
+                        <a href="resumen.html" id="btn-carrito">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>Carrito({{cantidadArticulosCarrito}})</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="info">
+                <div class="texto-info" data-aos="fade-up">
+                    <h4>Sobre nosotros</h4>
+                    <h3>Misión</h3>
+                    <p>
+                        Somos una <span class="resaltador">empresa líder</span> a nivel nacional, nos enfocamos en
+                        satisfacer las necesidades de tus
+                        mascotas. A través de un servicio de excelente calidad, nuestro equipo te asesora sobre los
+                        mejores alimentos y accesorios para tu peludo amigo.
+                    </p>
+                    <h3>Visión</h3>
+                    <p>
+                        Buscamos ser referentes del cuidado integral de las mascotas, ofreciendo a sus dueños, <span
+                            class="resaltador">alimentos de calidad</span> y acorde a su necesidad de nutricion. Con
+                        accesorios que promuevan la <span class="resaltador">tenencia responsable</span> y <span
+                            class="resaltador">servicios profesionales</span> que aseguren la salud de las mascotas.
+                    </p>
+                    <h3>Nuestra historia</h3>
+                    <p>
+                        Este proyecto nació cuando era pequeño, siempre anhele ser veterinario. Hoy ese sueño se
+                        hace
+                        realidad, poder brindar atención y cuidado a todas las mascotas del barrio de Caballito,
+                        barrio
+                        en el cual crecí y me hizo descubrir el amor hacia los animales.<br>
+                        Esta página tiene la finalidad de poder conectar con todas aquellas personas que tengan
+                        dificultades con sus mascotas, poder ayudadarlas o simplemente encontrar el accesorio ideal
+                        para
+                        ellos y hacerlos más felices.
+                    </p>
+                </div>
+                <div id="img-info" data-aos="fade-up">
+                    <img src="/assets/img/pets.png" alt="">
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="box-mas">
+                <div class="box-productos">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Ofertas</a>
+                        </li>
+                        <li>
+                            <a href="#">Novedades</a>
+                        </li>
+                        <li>
+                            <a href="#">Los mas vendidos</a>
+                        </li>
+                    </ul>
+                    <div class="box-redes">
+                        <h3>Nuestras redes</h3>
+                        <div class="box-redes-links">
+                            <a href="https://facebook.com">
+                                <i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://instagram.com">
+                                <i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://youtube.com">
+                                <i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-empresa">
+                    <h3>Nuestra empresa</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Envios</a>
+                        </li>
+                        <li>
+                            <a href="#">Terminos y condiciones</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacte con nosotros</a>
+                        </li>
+                        <li>
+                            <a href="#">Mapa del sito</a>
+                        </li>
+                        <li>
+                            <a href="#">Tiendas</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="medios-pagos">
+                    <div class="title-medios-pagos">
+                        <h3>Medios de pagos</h3>
+                    </div>
+                    <div class="img-medios-pagos">
+                        <img href="#" src="/assets/mastercard.jpg" alt="">
+                        <img src="/assets/Visa_logo.png" alt="">
+                        <img src="/assets/american-express.png" alt="">
+                        <img src="/assets/mercadopago-logo.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+            <div class="box-desarrollo">
+                <p>© 2022 - Software Ecommerce desarrollado por CarpinchoIT™</p>
+            </div>
+
+        </footer>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/497ab6b7a7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 400
+        });
+    </script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="/assets/javascript/vue.js"></script>
+    <script src="/assets/javascript/main.js"></script>
+
+
+    <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+        class="float" target="_blank">
+        <div id="box-wpp">
+            <i id="icon-wpp" class="fa fa-whatsapp my-float"></i>
+        </div>
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="/assets/styles/styleContact.css">
+    <link rel="stylesheet" href="/assets/styles/imagehover.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/hover.css">
+    <link rel="stylesheet" href="/assets/styles/hover-min.css">
+    <link rel="stylesheet" href="/assets/styles/btnStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <title>Farmacia - Franco Petshop</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <!-- MENU MOBILE -->
+            <div id="menu-mobile">
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
+                    aria-controls="offcanvasResponsive"><i class="fa-solid fa-bars"></i></button>
+
+                <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasResponsive"
+                    aria-labelledby="offcanvasResponsiveLabel">
+                    <div class="offcanvas-header">
+                        <div id="offcanvasResponsiveLabel">MENU</div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul>
+                            <li>
+                                <a href="index.html">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="#">Juguetes</a>
+                            </li>
+                            <li>
+                                <a href="farmacia.html">Farmacia</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Nosotros</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MENU DESKTOP -->
+            <div id="menu-desktop">
+                <div data-aos="zoom-in-right" class="box-brand">
+                    <div class="box-logo">
+                        <img src="/assets/img/logo_franco(transparente).png" alt="logo_franco" id="logo">
+                    </div>
+                    <div class="box-titulo">
+                        <a href="index.html">Franco Petshop</a>
+                    </div>
+                </div>
+                <div data-aos="zoom-in-left" class="box-navbar">
+                    <div class="box-nav">
+                        <nav>
+                            <a href="/index.html" class="hvr-grow">Inicio</a>
+                            <a href="#" class="hvr-grow">Juguetes</a>
+                            <a href="/farmacia.html" class="hvr-grow">Farmacia</a>
+                            <a href="about.html" class="hvr-grow">Nosotros</a>
+                            <a href="contact.html" class="hvr-grow">Contacto</a>
+                        </nav>
+                    </div>
+                    <div class="box-btn-carrito">
+                        <a href="resumen.html" id="btn-carrito">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>Carrito({{cantidadArticulosCarrito}})</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            {{cantidadArticulosargados}}
+            {{cambiarTexto}}
+            {{calcularPrecioTotal}}
+            <div class="img-container">
+                <img src="./assets/img/5.jpg" alt="" class="portadas">
+            </div>
+
+            <!-- Buscador -->
+            <div class="field has-addons">
+                <div id="box-search">
+                    <input id="input-search" type="text" v-model="message" placeholder="Busca aqui los juguetes">
+                </div>
+                <div id="box-select">
+                    <select name="" id="input-select">
+                        <option value="">Mayor a menor</option>
+                        <option value="">Menor a mayor</option>
+                    </select>
+                </div>
+                <span id="formError"></span>
+            </div>
+            <div class="card-container">
+                {{cantidadArticulosargados}} {{cambiarTexto}}
+                <div v-else v-for="juguete in juguetes" class="card-box">
+                    <div class="card hvr-grow">
+                        <figure class="imghvr-fade">
+                            <img :src="juguete.imagen" class="card-img-top" :alt="juguete.nombre">
+                            <figcaption>
+                                <p class="ih-zoom-in ih-delay-md">
+                                    <i>{{juguete.descripcion}}</i>
+                                </p>
+                            </figcaption>
+                            <a @click=mostrarDetalle(juguete) href="./details.html"></a>
+                        </figure>
+                        <div class="card-body">
+                            <h3 class="card-title">{{juguete.nombre}}</h3>
+                            <p class="card-text">{{juguete.precio}}$</p>
+                            <div class="card-footer">
+                                <a class="button-19">Agregar al carrito</a>
+                                <div class="contador">
+                                    <button @click=restarBotonConArray(juguete,menosStock) class="button-26"><i
+                                            class="fa-solid fa-minus"></i></button>
+                                    <input type="number" v-model="oferta.vmodel" min="1" class="display-contador"
+                                        style="width: 50px;">
+                                    <button @click=sumarBotonConArray(juguete,menosStock) class="button-26"><i
+                                            class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="box-mas">
+            <div class="box-productos">
+                <h3>Productos</h3>
+                <ul>
+                    <li>
+                        <a href="#">Ofertas</a>
+                    </li>
+                    <li>
+                        <a href="#">Novedades</a>
+                    </li>
+                    <li>
+                        <a href="#">Los mas vendidos</a>
+                    </li>
+                </ul>
+                <div class="box-redes">
+                    <h3>Nuestras redes</h3>
+                    <div class="box-redes-links">
+                        <a href="https://facebook.com">
+                            <i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://instagram.com">
+                            <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com">
+                            <i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="box-empresa">
+                <h3>Nuestra empresa</h3>
+                <ul>
+                    <li>
+                        <a href="#">Envios</a>
+                    </li>
+                    <li>
+                        <a href="#">Terminos y condiciones</a>
+                    </li>
+                    <li>
+                        <a href="#">Contacte con nosotros</a>
+                    </li>
+                    <li>
+                        <a href="#">Mapa del sito</a>
+                    </li>
+                    <li>
+                        <a href="#">Tiendas</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="medios-pagos">
+                <div class="title-medios-pagos">
+                    <h3>Medios de pagos</h3>
+                </div>
+                <div class="img-medios-pagos">
+                    <img href="#" src="/assets/mastercard.jpg" alt="">
+                    <img src="/assets/Visa_logo.png" alt="">
+                    <img src="/assets/american-express.png" alt="">
+                    <img src="/assets/mercadopago-logo.png" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="box-desarrollo">
+            <p>© 2022 - Software Ecommerce desarrollado por CarpinchoIT™</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/497ab6b7a7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 400
+        });
+    </script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="/assets/javascript/vue.js"></script>
+    <script src="/assets/javascript/main.js"></script>
+
+
+    <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+        class="float" target="_blank">
+        <div id="box-wpp">
+            <i id="icon-wpp" class="fa fa-whatsapp my-float"></i>
+        </div>
+    </a>
+</body>
+
+</html>
